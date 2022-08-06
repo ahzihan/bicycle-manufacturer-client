@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Admin Login for  Test parpose
+
+## Email: akbar@gmail.com
+## Password: 123456
+
 ## Available Scripts
 
 In the project directory, you can run:

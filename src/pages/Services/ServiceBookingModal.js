@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
-    const { _id, name, price, description, image } = order;
+    const { name, price, description, image } = order;
     const [ user, loading ] = useAuthState( auth );
 
     if ( loading ) {
@@ -16,19 +16,21 @@ const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
         event.preventDefault();
 
         const booking = {
-            _id,
             price,
             name,
             description,
             image,
             phone: event.target.phone.value,
             qty: event.target.qty.value,
-            customerName: user.displayName
+            customerName: user.displayName,
+            email: user.email
         };
+        console.log( booking );
         fetch( 'http://localhost:5000/order', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`
             },
             body: JSON.stringify( booking )
         } )
@@ -36,12 +38,13 @@ const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
             .then( data => {
                 if ( data.success ) {
                     toast( `Your Product Booking Successfully` );
+                    refetch();
+                    setOrder( null );
                 }
                 else {
                     toast.error( `Please Try Again` );
                 }
-                refetch();
-                setOrder( null );
+
             } );
     };
     return (

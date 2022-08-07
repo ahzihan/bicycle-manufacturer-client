@@ -10,8 +10,8 @@ const OrderTable = ( { order, index } ) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-20 rounded">
+                <div className="avatar">
+                    <div className="w-20 rounded">
                         <img src={image} alt="Product" />
                     </div>
                 </div>
@@ -22,7 +22,7 @@ const OrderTable = ( { order, index } ) => {
             <td>${price}</td>
             <td>${total}</td>
             <td>
-                <label for="delete-confirm-modal" class="btn btn-xs btn-success modal-button">approve</label>
+                <label for="delete-confirm-modal" className="btn btn-xs btn-success modal-button">approve</label>
             </td>
         </tr>
     );

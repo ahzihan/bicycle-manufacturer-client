@@ -1,7 +1,10 @@
 import React from 'react';
 
-const ProductTable = ( { product, index, setDeleteProduct } ) => {
-    const { name, price, description, image } = product;
+const MyOrderTable = ( { order, index } ) => {
+    const { name, description, image } = order;
+    const qty = order.qty;
+    const price = order.price;
+    const subTotal = parseInt( qty * price );
     return (
         <tr>
             <th>{index + 1}</th>
@@ -14,14 +17,14 @@ const ProductTable = ( { product, index, setDeleteProduct } ) => {
             </td>
             <td>{name}</td>
             <td>{description}</td>
+            <td>{qty} pcs</td>
             <td>${price}</td>
-            <td><button className="btn btn-xs btn-warning">Edit</button></td>
+            <td>${subTotal}</td>
             <td>
-                <label onClick={() => setDeleteProduct( product )} for="delete-confirm-modal" className="btn btn-xs btn-error modal-button">Delete</label>
-
+                <label for="delete-confirm-modal" className="btn btn-xs btn-primary modal-button">pending</label>
             </td>
         </tr>
     );
 };
 
-export default ProductTable;
+export default MyOrderTable;

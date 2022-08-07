@@ -12,8 +12,8 @@ const OurConcernCard = ( { service } ) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
             </div>
-            <div class="card-actions justify-center mb-5">
-                <Link to="/services" class="btn uppercase btn-primary">Details</Link>
+            <div className="card-actions justify-center mb-5">
+                <Link to="/services" className="btn uppercase btn-primary">Details</Link>
             </div>
         </div>
     );

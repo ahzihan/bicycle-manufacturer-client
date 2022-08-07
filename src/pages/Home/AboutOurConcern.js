@@ -14,7 +14,7 @@ const AboutOurConcern = () => {
                         <p className="py-6 text-black lg:w-3/4">Bicycle Manufacturer has one primary goal to provide top quality products and unparalleled services to all our customers. We have a solid commitment working hard and meeting all our customers requirements. <br /><br />
 
                             Bicycle Manufacturer businesses are based on a great heritage built on strong ethical principles, namely honesty, integrity, inattentiveness, and the highest levels of professionalism. With several business units, Bicycle Manufacturer has anchored its name in Bangladesh businesses and households alike, as well as in international markets.</p>
-                        <Link to="/about" class="btn uppercase btn-primary">Read More</Link>
+                        <Link to="/about" className="btn uppercase btn-primary">Read More</Link>
                     </div>
                 </div>
             </div>

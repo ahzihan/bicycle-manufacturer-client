@@ -2,13 +2,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import useAdmin from '../../Hooks/useAdmin';
 
 const ServicesCard = ( { product, setOrder } ) => {
     const { name, price, image, description } = product;
     const navigate = useNavigate();
     const [ user ] = useAuthState( auth );
-    const [ admin ] = useAdmin( user );
     return (
         <div className="card bg-base-100 shadow-xl">
             <div className="card bg-base-100 shadow-xl">
@@ -20,9 +18,9 @@ const ServicesCard = ( { product, setOrder } ) => {
                     <p>Price: ${price}</p>
                     <p>{description}</p>
                 </div>
-                <div class="card-actions justify-center mb-5">
+                <div className="card-actions justify-center mb-5">
                     {
-                        user ? <label htmlFor="booking-modal" onClick={() => setOrder( product )} disabled={( product.length === 0 ) || admin} className="btn btn-sm bg-gradient-to-r from-secondary to-primary uppercase text-white font-bold border-0">Buy Now</label> : navigate( '/login' )
+                        user ? <label htmlFor="booking-modal" onClick={() => setOrder( product )} disabled={product.length === 0} className="btn btn-sm bg-gradient-to-r from-secondary to-primary uppercase text-white font-bold border-0">Buy Now</label> : navigate( '/login' )
                     }
                 </div>
             </div>

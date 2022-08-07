@@ -2,7 +2,6 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading/Loading';
 import OrderTable from './OrderTable';
-import ProductTable from './ProductTable';
 
 const ManageOrders = () => {
     const { data: orders, isLoading, refetch } = useQuery( [ 'orders' ], () => fetch( 'http://localhost:5000/order', {

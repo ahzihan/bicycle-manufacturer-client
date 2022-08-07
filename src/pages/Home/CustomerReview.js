@@ -13,8 +13,8 @@ const CustomerReview = () => {
                     <h2 className="card-title">Title</h2>
                     <p>Message</p>
                 </div>
-                <div class="card-actions justify-center mb-5">
-                    <Link to="/services" class="btn uppercase btn-primary">Details</Link>
+                <div className="card-actions justify-center mb-5">
+                    <Link to="/services" className="btn uppercase btn-primary">Details</Link>
                 </div>
             </div>
         </section>

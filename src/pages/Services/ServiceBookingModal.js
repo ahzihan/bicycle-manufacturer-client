@@ -14,18 +14,16 @@ const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
 
     const handleBooking = event => {
         event.preventDefault();
-
         const booking = {
             price,
             name,
             description,
             image,
-            phone: event.target.phone.value,
             qty: event.target.qty.value,
+            phone: event.target.phone.value,
             customerName: user.displayName,
             email: user.email
         };
-        console.log( booking );
         fetch( 'http://localhost:5000/order', {
             method: 'POST',
             headers: {

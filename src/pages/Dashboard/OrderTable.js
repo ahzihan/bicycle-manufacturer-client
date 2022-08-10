@@ -1,11 +1,7 @@
 import React from 'react';
 
 const OrderTable = ( { order, index } ) => {
-    console.log( order );
-    const { name, description, image } = order;
-    const qty = order.qty;
-    const price = order.price;
-    const total = parseInt( qty * price );
+    const { name, qty, price, subTotal, transactionId, paid, email, phone, image } = order;
     return (
         <tr>
             <th>{index + 1}</th>
@@ -17,12 +13,20 @@ const OrderTable = ( { order, index } ) => {
                 </div>
             </td>
             <td>{name}</td>
-            <td>{description}</td>
+            <td>{email}</td>
+            <td>{phone}</td>
             <td>{qty} pcs</td>
             <td>${price}</td>
-            <td>${total}</td>
+            <td>${subTotal}</td>
             <td>
-                <label for="delete-confirm-modal" className="btn btn-xs btn-success modal-button">approve</label>
+
+                {
+                    ( subTotal && !paid ) && <button className='btn btn-xs btn-primary'>Pending</button>
+
+                }
+                {
+                    ( transactionId && paid ) && <button className='btn btn-xs btn-success'>Paid</button>
+                }
             </td>
         </tr>
     );

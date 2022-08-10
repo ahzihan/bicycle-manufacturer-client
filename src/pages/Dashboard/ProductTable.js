@@ -17,7 +17,7 @@ const ProductTable = ( { product, index, setDeleteProduct } ) => {
             <td>${price}</td>
             <td><button className="btn btn-xs btn-warning">Edit</button></td>
             <td>
-                <label onClick={() => setDeleteProduct( product )} for="delete-confirm-modal" className="btn btn-xs btn-error modal-button">Delete</label>
+                <label onClick={() => setDeleteProduct( product )} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error modal-button">Delete</label>
 
             </td>
         </tr>

@@ -14,8 +14,11 @@ const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
 
     const handleBooking = event => {
         event.preventDefault();
+        const qty = event.target.qty.value;
+        const subTotal = ( qty * price ) + '';
         const booking = {
             price,
+            subTotal,
             name,
             description,
             image,

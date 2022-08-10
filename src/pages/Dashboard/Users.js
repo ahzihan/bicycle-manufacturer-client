@@ -16,7 +16,6 @@ const Users = () => {
     if ( isLoading ) {
         return <Loading></Loading>;
     }
-    console.log( users );
     return (
         <div className="overflow-x-auto">
             <h3 className='text-xl text-secondary font-bold text-center py-3'>All Users List</h3>

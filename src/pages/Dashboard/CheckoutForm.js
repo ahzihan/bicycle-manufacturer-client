@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const CheckoutForm = ( { order, subTotal } ) => {
+const CheckoutForm = ( { order } ) => {
     const stripe = useStripe();
     const elements = useElements();
     const [ cardError, setCardError ] = useState( '' );
@@ -9,7 +9,7 @@ const CheckoutForm = ( { order, subTotal } ) => {
     const [ success, setSuccess ] = useState( '' );
     const [ processing, setProcessing ] = useState( '' );
     const [ transactionID, setTransactionID ] = useState( '' );
-    const { _id, price, email, productName } = order;
+    const { _id, subTotal, email, productName } = order;
 
 
     useEffect( () => {
@@ -76,7 +76,7 @@ const CheckoutForm = ( { order, subTotal } ) => {
 
             //Store payment info in database
             const payment = {
-                appointment: _id,
+                order: _id,
                 transactionId: paymentIntent.id
             };
             fetch( `http://localhost:5000/order/${ _id }`, {
@@ -88,7 +88,6 @@ const CheckoutForm = ( { order, subTotal } ) => {
                 body: JSON.stringify( payment )
             } ).then( res => res.json() ).then( data => {
                 setProcessing( false );
-                console.log( data );
             } );
         }
     };

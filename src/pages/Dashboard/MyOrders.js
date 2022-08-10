@@ -12,7 +12,6 @@ const MyOrders = () => {
             authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`
         }
     } ).then( res => res.json() ) );
-    console.log( orders );
     if ( isLoading ) {
         return <Loading></Loading>;
     }

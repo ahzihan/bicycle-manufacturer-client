@@ -23,8 +23,9 @@ const ManageOrders = () => {
                     <tr>
                         <th></th>
                         <th>Image</th>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>Product Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                         <th>Quantity</th>
                         <th>Sub Total</th>
                         <th>Total</th>

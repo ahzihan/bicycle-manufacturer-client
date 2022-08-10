@@ -6,6 +6,7 @@ import tools from '../../assets/image/Bicycle service isometric composition.jpg'
 const AboutOurConcern = () => {
     return (
         <section style={{ background: `url(${ banner2 })`, backgroundSize: 'cover' }}>
+
             <div className="hero py-6 lg:py-12">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={tools} className="lg:max-w-md rounded-lg shadow-2xl" alt='banner' />

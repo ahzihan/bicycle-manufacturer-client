@@ -8,7 +8,6 @@ const CustomerReview = () => {
             .then( res => res.json() )
             .then( data => {
                 setReviews( data );
-                console.log( data );
             } );
     }, [] );
     return (
@@ -16,7 +15,7 @@ const CustomerReview = () => {
             <h2 className='text-center text-4xl uppercase'>Product Review</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 py-5'>
                 {
-                    reviews.slice( -3 ).map( review => <div className="card bg-base-100 shadow-xl">
+                    reviews.slice( -3 ).map( review => <div key={review._id} className="card bg-base-100 shadow-xl">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{review.subject}</h2>
                             <p>{review.message}</p>

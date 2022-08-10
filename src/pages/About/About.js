@@ -1,9 +1,12 @@
 import React from 'react';
+import AboutOurConcern from '../Home/AboutOurConcern';
+import Footer from '../Shared/Footer/Footer';
 
 const About = () => {
     return (
         <div>
-            <h2>About Us</h2>
+            <AboutOurConcern></AboutOurConcern>
+            <Footer></Footer>
         </div>
     );
 };

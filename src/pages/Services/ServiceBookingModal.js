@@ -27,7 +27,7 @@ const ServiceBookingModal = ( { order, setOrder, refetch } ) => {
             customerName: user.displayName,
             email: user.email
         };
-        fetch( 'http://localhost:5000/order', {
+        fetch( 'https://peaceful-shore-44176.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe( 'pk_test_51LRsdMF5KgJvVVYzb13wfDmC04ervS9MIC3fPtO3BSIuojuUTDW9ptxWR4C9qzNFZmd7irpHiCJwkBZbnIAPOKxS00fdTB2Jv5' );
 const Payment = () => {
     const { id } = useParams();
-    const { data: order, isLoading } = useQuery( [ 'order', id ], () => fetch( `http://localhost:5000/order/${ id }` ).then( res => res.json() ) );
+    const { data: order, isLoading } = useQuery( [ 'order', id ], () => fetch( `https://peaceful-shore-44176.herokuapp.com/order/${ id }` ).then( res => res.json() ) );
 
     if ( isLoading ) {
         return <Loading></Loading>;

@@ -7,7 +7,7 @@ import ServicesCard from './ServicesCard';
 
 const Services = () => {
     const [ order, setOrder ] = useState( null );
-    const { data: products, isLoading, refetch } = useQuery( [ 'products' ], () => fetch( 'http://localhost:5000/product', {
+    const { data: products, isLoading, refetch } = useQuery( [ 'products' ], () => fetch( 'https://peaceful-shore-44176.herokuapp.com/product', {
         headers: {
             'content-type': 'application/json',
             authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`

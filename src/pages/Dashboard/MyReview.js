@@ -14,7 +14,7 @@ const MyReview = () => {
             rating: event.target.rating.value,
             customerName: user.displayName,
         };
-        fetch( 'http://localhost:5000/review', {
+        fetch( 'https://peaceful-shore-44176.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

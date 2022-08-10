@@ -7,7 +7,7 @@ import MyOrderTable from './MyOrderTable';
 
 const MyOrders = () => {
     const [ user ] = useAuthState( auth );
-    const { data: orders, isLoading } = useQuery( [ 'orders' ], () => fetch( `http://localhost:5000/order/${ user.email }`, {
+    const { data: orders, isLoading } = useQuery( [ 'orders' ], () => fetch( `https://peaceful-shore-44176.herokuapp.com/order/${ user.email }`, {
         headers: {
             authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`
         }

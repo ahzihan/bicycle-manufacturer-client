@@ -7,7 +7,7 @@ import ProductTable from './ProductTable';
 
 const ManageProducts = () => {
     const [ deleteProduct, setDeleteProduct ] = useState( null );
-    const { data: products, isLoading, refetch } = useQuery( [ 'products' ], () => fetch( 'http://localhost:5000/product', {
+    const { data: products, isLoading, refetch } = useQuery( [ 'products' ], () => fetch( 'https://peaceful-shore-44176.herokuapp.com/product', {
         headers: {
             authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`
         }

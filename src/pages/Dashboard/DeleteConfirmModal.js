@@ -6,7 +6,7 @@ const DeleteConfirmModal = ( { deleteProduct, setDeleteProduct, refetch } ) => {
     console.log( deleteProduct );
 
     const handleDelete = () => {
-        fetch( `http://localhost:5000/product/${ _id }`, {
+        fetch( `https://peaceful-shore-44176.herokuapp.com/product/${ _id }`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

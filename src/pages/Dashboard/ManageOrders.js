@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import OrderTable from './OrderTable';
 
 const ManageOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery( [ 'orders' ], () => fetch( 'http://localhost:5000/order', {
+    const { data: orders, isLoading, refetch } = useQuery( [ 'orders' ], () => fetch( 'https://peaceful-shore-44176.herokuapp.com/order', {
         headers: {
             authorization: `Bearer ${ localStorage.getItem( 'accessToken' ) }`
         }

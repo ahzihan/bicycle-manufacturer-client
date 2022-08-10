@@ -5,7 +5,7 @@ const useAdmin = user => {
     const [ adminLoading, setAdminLoading ] = useState( true );
 
     useEffect( () => {
-        fetch( `http://localhost:5000/admin/${ user.email }`, {
+        fetch( `https://peaceful-shore-44176.herokuapp.com/admin/${ user.email }`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
